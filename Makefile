@@ -7,5 +7,5 @@ stop:
 build:
 	docker build -t dan-dawson-onboarding .
 
-build-start:
+docker-start:
 	make build && docker compose up -d
