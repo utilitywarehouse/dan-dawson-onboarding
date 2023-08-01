@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  onboarding:
+    image: dan-dawson-onboarding:latest
+    container_name: onboarding
+    hostname: onboarding
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    working_dir: "/app"
+    command:
+      - "/onboarding"
