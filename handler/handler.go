@@ -13,6 +13,6 @@ func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 }
 
 func InitHandler() {
-	http.HandleFunc("/", serveCurrentTime)
+	http.HandleFunc("/time", serveCurrentTime)
 	http.ListenAndServe(":8080", nil)
 }
