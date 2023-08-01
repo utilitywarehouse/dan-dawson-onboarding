@@ -9,7 +9,6 @@ func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 	currentTime := time.Now().String()
 
 	w.Write([]byte(currentTime))
-
 }
 
 func InitHandler() {
