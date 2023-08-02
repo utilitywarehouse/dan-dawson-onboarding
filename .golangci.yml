@@ -1,2 +1,3 @@
-  disable:
-    - typecheck
+  linters:
+    disable:
+      - typecheck
