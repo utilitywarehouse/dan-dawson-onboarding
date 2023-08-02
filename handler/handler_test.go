@@ -39,7 +39,7 @@ func TestServeTime(t *testing.T) {
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
 
-			req, _ := http.NewRequest(tc.method, url, bytes.NewBuffer([]byte{}))
+			req, _ := http.NewRequest(tc.method, url, bytes.NewBuffer([]byte("test")))
 			client := &http.Client{}
 
 			resp, _ := client.Do(req)
