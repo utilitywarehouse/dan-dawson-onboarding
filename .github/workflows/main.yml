@@ -24,6 +24,7 @@ jobs:
         with:
           version: ${{ env.GOLANGCI_LINT_VERSION }}
           skip-go-installation: true
+          args: --config=./.golangci.yml
       - name: Test
         run: make all #REF2
   build:
