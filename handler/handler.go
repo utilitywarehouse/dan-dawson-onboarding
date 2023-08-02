@@ -19,7 +19,9 @@ func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(time.Now().String()))
 }
 
-func InitHandler() {
+func InitHandler() error {
 	http.HandleFunc("/time", serveCurrentTime)
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+
+	return err
 }
