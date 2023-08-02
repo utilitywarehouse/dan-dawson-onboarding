@@ -9,3 +9,6 @@ docker-start:
 
 docker-stop:
 	docker ps -aq | xargs docker stop | xargs docker rm
+
+all:
+	go mod tidy && make test
