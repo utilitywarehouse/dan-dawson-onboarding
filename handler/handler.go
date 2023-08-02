@@ -19,9 +19,11 @@ func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(time.Now().String()))
 }
 
-func InitHandler() error {
+func InitHandler() {
 	http.HandleFunc("/time", serveCurrentTime)
 	err := http.ListenAndServe(":8080", nil)
 
-	return err
+	if err != nil {
+		log.Fatalf("failed to start server: %v\n", err.Error())
+	}
 }
