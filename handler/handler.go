@@ -11,12 +11,20 @@ func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != http.MethodGet {
 		invalidMethodMsg := fmt.Sprintf("invalid request method used: %v\n", r.Method)
-		log.Printf(invalidMethodMsg)
+		log.Print(invalidMethodMsg)
 		w.WriteHeader(http.StatusMethodNotAllowed)
-		w.Write([]byte(invalidMethodMsg))
+		_, err := w.Write([]byte(invalidMethodMsg))
+
+		if err != nil {
+			log.Fatalf("error writing value to client: %v\n", err)
+		}
 		return
 	}
-	w.Write([]byte(time.Now().String()))
+	_, err := w.Write([]byte(time.Now().String()))
+
+	if err != nil {
+		log.Fatalf("error writing value to client: %v\n", err)
+	}
 }
 
 func InitHandler() {
