@@ -1,6 +1,9 @@
 start:
 	go run cmd/main.go
 
+test:
+	go test ./handler -v
+
 build:
 	docker build -t dan-dawson-onboarding .
 
