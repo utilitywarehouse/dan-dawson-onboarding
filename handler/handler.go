@@ -10,7 +10,6 @@ import (
 
 func serveCurrentTime(w http.ResponseWriter, r *http.Request) {
 	metrics.RM.Inc()
-	fmt.Println("got here")
 	if r.Method != http.MethodGet {
 		invalidMethodMsg := fmt.Sprintf("invalid request method used: %v\n", r.Method)
 		log.Print(invalidMethodMsg)
