@@ -1,9 +1,10 @@
 package metrics
 
 import (
+	"net/http"
+
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/utilitywarehouse/go-operational/op"
-	"net/http"
 )
 
 var RM = prometheus.NewCounter(prometheus.CounterOpts{
